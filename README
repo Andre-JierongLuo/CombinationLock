@@ -1,1 +1,6 @@
 Implement a combination lock that has an n-number combination.
+
+2014-5-26:
+simply create the lock with an initial password 1-2-3.
+Can't change that password for now.
+Maybe add a function that reset the password later.
