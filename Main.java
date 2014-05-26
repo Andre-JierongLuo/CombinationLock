@@ -14,7 +14,7 @@ public class Main {
 		UiModel uimodel = new UiModel();
 		lock.lock();
 		p.setLayout(new BoxLayout(p,BoxLayout.Y_AXIS));
-		f.setMinimumSize(new Dimension(280,400));
+		f.setMinimumSize(new Dimension(280,420));
 		f.setMaximumSize(new Dimension(400,480));
 		f.setContentPane(p);
 		StateView view = new StateView(lock);
