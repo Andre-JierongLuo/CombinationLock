@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import javax.swing.*;
 
 
-public class CombinationLock {
+public class Main {
 	public static void main(String[] args) {
 		// set up the JFrame.
 		JFrame f = new JFrame("Combination Lock");
