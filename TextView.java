@@ -15,6 +15,7 @@ public class TextView extends JPanel implements IView{
 	private JLabel show = new JLabel();
 	private JButton unlock = new JButton("unlock");
 	private JButton clear = new JButton("CLEAR ALL");
+	private JButton reset = new JButton("RESET PASSWORD");
 	
 	public TextView(LockModel model_,UiModel uimodel_){
 		this.model = model_;
@@ -26,6 +27,8 @@ public class TextView extends JPanel implements IView{
 		p1.add(show);
 		p1.add(clear);
 		this.add(p1);
+		reset.setAlignmentX(0.5f);
+		this.add(reset);
 		unlock.setAlignmentX(0.5f);
 		this.add(unlock);
 		JPanel p2 = new JPanel();
@@ -69,6 +72,12 @@ public class TextView extends JPanel implements IView{
 				}
 			}
 		});
+		
+		this.reset.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				
+			}
+		});
 	}
 	
 	public void updateView(){
@@ -76,11 +85,13 @@ public class TextView extends JPanel implements IView{
 		if(this.model.isLocked()){
 			this.pass.setEnabled(true);
 			this.enterButton.setEnabled(true);
-			this.unlock.setText("click here to unlock");
+			this.reset.setEnabled(false);
+			this.unlock.setText("CLICK HERE TO UNLOCK");
 		} else {
 			this.pass.setEnabled(false);
 			this.enterButton.setEnabled(false);
-			this.unlock.setText("click here to lock");
+			this.reset.setEnabled(true);
+			this.unlock.setText("CLICK HERE TO LOCK");
 		}
 		this.show.setText("You have entered " + uimodel.getCount() + " numbers.");
 	}
